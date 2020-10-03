@@ -126,8 +126,10 @@ body{
     padding:0;
 }
 .shadow{
-    box-shadow: 0 0 35px grey !important;
+    box-shadow: -15px 3px 15px 0px rgba(128,128,128, 0.45),
+    15px 3px 15px 0px rgba(128,128,128, 0.45) !important;
 }
+
 .content-top{
     border-bottom:1px solid #e0e2e1;
 }
