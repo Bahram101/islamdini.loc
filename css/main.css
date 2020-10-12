@@ -1,33 +1,105 @@
-*{
-    margin:0;
-    padding: 0;
-}
 @font-face {
     font-family: "ID UNIVERSITY";
     src: url("../fonts/UNIVERSITY.ttf");
 }
+@font-face {
+    font-family: "Kelly sla";
+    src: url("../fonts/KellySlab-Regular.ttf");
+}
+@import url("https://use.fontawesome.com/releases/v5.2.0/css/all.css");
+.menu label{
+    margin-bottom:0 !important;
+    height: 42px;
+}
+.menu label:hover{
+    background: #B28721;
+}
+input{
+    outline:none;
+}
+ol, ul, dl {
+    margin-top: 0;
+    margin-bottom: 0 !important;
+    padding:0;
+}
 li{
     list-style:none;
 }
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+
 body{
     font-family: Calibri;
 }
 .header-top, .header-bottom{
-    height: 38px;
     background: #016241;
     color:white;
 }
-.header-top .namaztime, .header-bottom .menu-item{
-    padding:7px;
-    border-left:1px solid #5EA28B;
+.header-top .namaztime{
+    border-left: 1px solid #5ea28b;
+}
+
+.header-top .namaztime:last-child{
+    border-right: 1px solid #5ea28b;
+}
+.header-top .namaztimes-column{
     text-transform: uppercase;
-    font-weight:bold;
+}
+.header-top .namaztimes-column .active{
+    background: #B28721;
+}
+.header-top .namaztime .lines .active{
+    width: 16.6%;
+    height: 7px;
+    border-right: 1px solid white;
+}
+.header-top .namaztimes-column .arrow{
+    /*border-top:5px solid transparent;*/
+    border-right:4px solid transparent;
+    border-bottom:5px solid #016241;
+    border-left:4px solid transparent;
+    height:0;
+    width:0;
+    top: 10px;
+    left: 40px;
+    position: absolute;
 }
 .header-top li:last-child{
     border-right:1px solid #5EA28B;
 }
+.header-top .namaztime .line{
+    width: 16.6%;
+    height: 7px;
+    border-right: 1px solid #5ea28b;
+}
+.header-top .namaztime .line:last-child{
+    border-right: 0;
+}
+.header-top .namaztime .name-and-time{
+    padding: 3px 10px;
+}
+.header-top .city-search{
+    padding: 4px 0;
+}
+.header-top .btn-search{
+    background-color: transparent !important;
+    border-color: transparent !important;
+    outline: 0 !important;
+}
+.header-bottom .menu-item{
+    padding:9px;
+    border-left:1px solid #5EA28B;
+    text-transform: uppercase;
+    font-weight:bold;
+}
 .header-bottom li:first-child{
     border-left: none;
+    padding-top: 11px;
+    padding-bottom: 13px;
 }
 .header-center{
     background-image: url('../img/header_bg.jpg');
@@ -72,7 +144,9 @@ body{
 .header-center .carousel-item .kuntizbe{
     color: #016241;
     margin-bottom: 0;
-    font-size: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    font-family: "ID UNIVERSITY";
 }
 .m-bot-0{
     margin-bottom:0;
@@ -103,11 +177,16 @@ body{
     font-weight:normal;
     margin-top:2px;
 }
+.date-column{
+    display: flex;
+    align-items: center;
+}
 .date{
     font-size: 18px;
     text-transform: uppercase;
-    line-height: 40px;
+    /*line-height: 40px;*/
     font-weight: bold;
+    margin-bottom: 0!important;
 }
 .city-search .dropdown button{
     background: transparent;
@@ -117,8 +196,18 @@ body{
     padding-left:25px;
     padding-right:25px;
 }
+.header-bottom .menu-item:hover{
+    padding-left:25px;
+    padding-right:25px;
+    background: #B28721;
+    cursor: pointer;
+}
+
+
+/*MAIN*/
 #main{
     background: url("../img/background.png") repeat;
+    background-size: 150px;
 }
 .content{
     background: #fff;
@@ -126,8 +215,8 @@ body{
     padding:0;
 }
 .shadow{
-    box-shadow: -15px 3px 15px 0px rgba(128,128,128, 0.45),
-    15px 3px 15px 0px rgba(128,128,128, 0.45) !important;
+    box-shadow: -15px 3px 15px 0 rgba(128,128,128, 0.35),
+    15px 3px 15px 0 rgba(128,128,128,0.35) !important;
 }
 
 .content-top{
@@ -159,7 +248,7 @@ body{
 }
 ion-icon{
     font-size: 28px;
-    color:#016241;
+    margin-top:10px;
 }
 .rotate-90 {
     display: inline-block;
@@ -168,7 +257,9 @@ ion-icon{
 .article-content{
     border-bottom:1px solid #e0e2e1;
     padding: 10px 15px 15px 0;
-
+}
+.article-content:last-child{
+    /*border-bottom: 0;*/
 }
 .article-content .type{
     text-transform: uppercase;
@@ -208,13 +299,99 @@ ion-icon{
     cursor: pointer;
     transition: all 0.3s;
 }
+
+/*SIDEBAR*/
 .sidebar{
     background: #fff;
 }
-#footer{
-    /*background-image: url(../img/background.png);
-    background-repeat: repeat-x;*/
+.sidebar .widget{
+    border: 2px solid #016241;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
+.sidebar .widget-title {
+    background: #016241;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+}
+.sidebar .subscribe{
+    text-align: center;
+}
+.sidebar .quantity-subscribers h5{
+    font-size:16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color:#B28721;
+}
+.sidebar .for-newsletter{
+    font-size: 19px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #B28721;
+}
+.sidebar .input-email{
+    display: block;
+    width: 85%;
+    margin: 0 auto 5px;
+    border: 1px solid #016241;
+    padding: 5px 8px;
+}
+.sidebar .btn-subscribe{
+    width: 85%;
+    background: #016241;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 5px 0;
+    transition: all 0.3s;
+}
+.sidebar .btn-subscribe:hover{
+    width: 85%;
+    background: #B28721;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 5px 0;
+}
+.sidebar .quantity-subscribers{
+    font-size: 40px;
+    letter-spacing: 10px;
+    color: #016241;
+    font-family: Kelly sla;
+}
+.sidebar .last-inserted ul{
+    padding-left:15px;
+    padding-right:15px;
+}
+.sidebar .widget ul li{
+    padding-bottom:10px;
+}
+.sidebar .widget ul li i{
+    margin-right:10px;
+    color: #016241;
+}
+.sidebar .widget ul li a{
+    color: #2d2c2a;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.sidebar .sura-dua-img, .sidebar .kibla-img{
+    padding:10px;
+}
+.sidebar .sura-dua .widget-title{
+    color: #fff;
+}
+
+
+/*FOOTER*/
 .footer-top{
     background: rgba(1,98,65, 0.9);
     border-top: 5px solid #B28721;
@@ -227,8 +404,6 @@ ion-icon{
 }
 .footer-top .contact{
     padding-left: 20px;
-   /* display: flex;
-    flex-direction: ;*/
 }
 .footer-top .contact p, .footer-top .total-guests p{
     margin-bottom: 0 !important;
@@ -259,3 +434,39 @@ ion-icon{
     color: white;
     font-size:18px;
 }
+
+
+@media(min-width: 992px) and (max-width:1199px){
+    .header-top .namaztime .name-and-time{
+        padding: 3px 4px;
+    }
+    .header-bottom .menu-item{
+        padding-left:18px;
+        padding-right:18px;
+    }
+    .header-bottom .menu-item:hover{
+        padding-left:18px;
+        padding-right:18px;
+    }
+
+}
+
+/*
+@media(min-width:768px) and (max-width:991px){
+    .date{
+        text-align:center;
+        font-size:15px;
+    }
+    .header-top .namaztime .name-and-time{
+        font-size:14px;
+        text-align: center;
+    }
+    .carousel-caption{
+        bottom:5px;
+        padding-bottom:30px;
+    }
+    .header-center .carousel-item .text{
+        font-size:30px;
+    }
+
+}*/
