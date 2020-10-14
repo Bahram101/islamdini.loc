@@ -49,6 +49,7 @@ body{
 .header-top .namaztimes-column{
     text-transform: uppercase;
 }
+
 .header-top .namaztimes-column .active{
     background: #B28721;
 }
@@ -58,15 +59,16 @@ body{
     border-right: 1px solid white;
 }
 .header-top .namaztimes-column .arrow{
-    /*border-top:5px solid transparent;*/
     border-right:4px solid transparent;
-    border-bottom:5px solid #016241;
+    /*border-bottom:5px solid #016241;*/
+    border-bottom:5px solid #fff;
     border-left:4px solid transparent;
     height:0;
     width:0;
     top: 10px;
     left: 40px;
     position: absolute;
+
 }
 .header-top li:last-child{
     border-right:1px solid #5EA28B;
@@ -80,27 +82,21 @@ body{
     border-right: 0;
 }
 .header-top .namaztime .name-and-time{
-    padding: 3px 10px;
+    padding: 5px 6px 5px 5px;
+    text-transform: uppercase;
+    text-align: center;
+    align-items: center;
+    justify-content: flex-end;
 }
-.header-top .city-search{
-    padding: 4px 0;
-}
+
 .header-top .btn-search{
     background-color: transparent !important;
     border-color: transparent !important;
     outline: 0 !important;
+    font-size: 18px;
+    font-weight: bold;
 }
-.header-bottom .menu-item{
-    padding:9px;
-    border-left:1px solid #5EA28B;
-    text-transform: uppercase;
-    font-weight:bold;
-}
-.header-bottom li:first-child{
-    border-left: none;
-    padding-top: 11px;
-    padding-bottom: 13px;
-}
+
 .header-center{
     background-image: url('../img/header_bg.jpg');
     background-repeat: no-repeat;
@@ -109,7 +105,7 @@ body{
     position: relative;
     width:100%;
 }
-.overlay{
+.header-center .overlay{
     position: absolute;
     top:0;
     left:0;
@@ -126,7 +122,7 @@ body{
 
 .header-center .carousel-item .text{
     color: #016241;
-    font-size:32px;
+    font-size:30px;
     font-weight: bold;
     font-family: "ID UNIVERSITY";
     margin-bottom: 0;
@@ -184,7 +180,6 @@ body{
 .date{
     font-size: 18px;
     text-transform: uppercase;
-    /*line-height: 40px;*/
     font-weight: bold;
     margin-bottom: 0!important;
 }
@@ -193,15 +188,22 @@ body{
     border-color: transparent;
 }
 .header-bottom .menu-item{
-    padding-left:25px;
-    padding-right:25px;
+    padding: 9px 27px 9px 28px;
+    border-left:1px solid #5EA28B;
+    text-transform: uppercase;
+    font-weight:bold;
 }
 .header-bottom .menu-item:hover{
-    padding-left:25px;
-    padding-right:25px;
-    background: #B28721;
+    /*background: #B28721;*/
     cursor: pointer;
 }
+.header-bottom li:first-child{
+    border-left: none;
+}
+.header-bottom .menu-item .burger-left, .header-bottom .menu-item .burger-center{
+    margin-right: 3px;
+}
+
 
 
 /*MAIN*/
@@ -248,7 +250,7 @@ body{
 }
 ion-icon{
     font-size: 28px;
-    margin-top:10px;
+    /*margin-top:10px;*/
 }
 .rotate-90 {
     display: inline-block;
@@ -435,38 +437,67 @@ ion-icon{
     font-size:18px;
 }
 
-
-@media(min-width: 992px) and (max-width:1199px){
-    .header-top .namaztime .name-and-time{
-        padding: 3px 4px;
+@media(min-width: 992px) and (max-width: 1199px){
+    .header-center .logo {
+        width: 170px;
     }
-    .header-bottom .menu-item{
-        padding-left:18px;
-        padding-right:18px;
+    .city-search-column{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
     }
-    .header-bottom .menu-item:hover{
-        padding-left:18px;
-        padding-right:18px;
+    .header-bottom .menu-item {
+        padding:9px 15px 9px 20px;
     }
-
-}
-
-/*
-@media(min-width:768px) and (max-width:991px){
-    .date{
-        text-align:center;
+    .article-content .type{
+        font-size: 26px;
+    }
+    .sidebar .widget ul li a{
         font-size:15px;
     }
-    .header-top .namaztime .name-and-time{
-        font-size:14px;
-        text-align: center;
+}
+
+@media(min-width: 768px) and (max-width:991px){
+    .header-top .namaztimes-column ul{
+        border-top:1px solid #fff;
     }
-    .carousel-caption{
-        bottom:5px;
-        padding-bottom:30px;
+    .header-top .date{
+        font-size:16px;
+    }
+    .header-top .city-search-column{
+        display: flex;
+        justify-content:center;
+    }
+    .header-top .access-column{
+        display:flex;
+        justify-content: flex-end;
+    }
+    .header-bottom .menu-item{
+        border-left:0;
+    }
+    #real-accessability ul{
+        background: transparent !important;
+        display: flex;
+        align-items:center;
+    }
+    #real-accessability ul li{
+        border-right:0;
+    }
+    .header-top .namaztime .name-and-time{
+        padding: 4px 17px 5px 17px;
+        font-size: 15px;
+    }
+    .header-center .carousel-caption{
+        bottom:10px;
     }
     .header-center .carousel-item .text{
-        font-size:30px;
+        /*margin-bottom:0 !important;*/
+        line-height: 1.2;
+    }
+    .header-center .carousel-item .hadis,
+    .header-center .carousel-item .kuntizbe{
+        font-size: 24px;
     }
 
-}*/
+
+}

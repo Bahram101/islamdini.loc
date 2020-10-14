@@ -67,13 +67,13 @@
     <div class="header-top">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-3 date-column ">
+                <div class="col-lg-3 col-md-4 date-column ">
                     <h3 class="date">28-Мухаррам 1442 жыл</h3>
                 </div>
-                <div class="col-lg-2 col-md-4">
+                <div class="col-lg-2 col-md-4 city-search-column">
                     <div class="city-search" >
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle btn-search" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="dropdown pull-right">
+                            <button class="btn btn-secondary dropdown-toggle btn-search"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Алматы
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -84,7 +84,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-4 d-lg-none">
+                <div class="col-lg-2 col-md-4 d-lg-none access-column">
                     <div id="real-accessability" style="display:inherit;">
                         <ul>
                             <li><a href="#" id="real-accessability-biggerFont"></a></li>
@@ -97,7 +97,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-7 namaztimes-column">
                     <ul class="d-flex justify-content-between">
                         <span class="arrow"></span>
                         <li class="namaztime active">
@@ -112,7 +112,7 @@
                                 <div class="line active"></div>
                             </div>
                             <div class="name-and-time">
-                                <span class="name">имсак</span> - <span class="time">4:40</span>
+                                <span class="name">имсак</span> <span class="hyphen d-none d-xl-inline-block">-</span> <span class="time">04:40</span>
                             </div>
                         </li>
                         <li class="namaztime">
@@ -126,22 +126,7 @@
                                 <div class="line"></div>
                             </div>
                             <div class="name-and-time">
-                                <span class="name">күн</span> - <span class="time">4:40</span>
-                            </div>
-                        </li>
-                        <li class="namaztime">
-                            <div class="lines d-flex ">
-                                <div class="line"></div>
-                                <div class="line"></div>
-                                <div class="line"></div>
-                                <div class="line"></div>
-                                <div class="line"></div>
-                                <div class="line"></div>
-                                <div class="line"></div>
-                                <div class="line"></div>
-                            </div>
-                            <div class="name-and-time">
-                                <span class="name">бесін</span> - <span class="time">4:40</span>
+                                <span class="name">күн</span> <span class="hyphen d-none d-xl-inline-block">-</span> <span class="time">04:40</span>
                             </div>
                         </li>
                         <li class="namaztime">
@@ -156,7 +141,7 @@
                                 <div class="line"></div>
                             </div>
                             <div class="name-and-time">
-                                <span class="name">екінді</span> - <span class="time">4:40</span>
+                                <span class="name">бесін</span> <span class="hyphen d-none d-xl-inline-block">-</span> <span class="time">04:40</span>
                             </div>
                         </li>
                         <li class="namaztime">
@@ -169,10 +154,9 @@
                                 <div class="line"></div>
                                 <div class="line"></div>
                                 <div class="line"></div>
-                                <div class="line"></div>
                             </div>
                             <div class="name-and-time">
-                                <span class="name">ақшам</span> - <span class="time">4:40</span>
+                                <span class="name">екінді</span> <span class="hyphen d-none d-xl-inline-block">-</span> <span class="time">04:40</span>
                             </div>
                         </li>
                         <li class="namaztime">
@@ -188,7 +172,23 @@
                                 <div class="line"></div>
                             </div>
                             <div class="name-and-time">
-                                <span class="name">құптан</span> - <span class="time">4:40</span>
+                                <span class="name">ақшам</span> <span class="hyphen d-none d-xl-inline-block">-</span> <span class="time">04:40</span>
+                            </div>
+                        </li>
+                        <li class="namaztime">
+                            <div class="lines d-flex ">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                            </div>
+                            <div class="name-and-time">
+                                <span class="name">құптан</span> <span class="hyphen d-none d-xl-inline-block">-</span> <span class="time">04:40</span>
                             </div>
                         </li>
                     </ul>
@@ -200,10 +200,10 @@
         <div class="overlay d-flex py-3">
             <div class="container d-flex">
                 <div class="row d-flex " style="flex:1 0 auto">
-                    <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                    <div class="col-lg-3 col-md-3 d-flex align-items-center justify-content-center">
                          <img  src="img/logo.svg" alt="logo" class="logo img-responsive " >
                     </div>
-                    <div class="col-lg-9">
+                    <div class="col-lg-9 col-md-9">
                         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators my-0">
                                 <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -212,7 +212,7 @@
                             <div class="carousel-inner ">
                                 <div class="carousel-item active " >
                                     <div class="carousel-caption d-none d-md-block" style="right:5%; left:5%;">
-                                        <p class="text mb-2">«Иманның ең кемелі, қайда болсаң да Аллаһу та'аланың сенімен бірге екенін білуің».
+                                        <p class="text mb-2">«Иманның ең кемелі, қайда болсаң да Аллаһу та'аланың сенімен бірге екенін білуің ».
                                         </p>
                                         <p class="hadis text-center d-inline">Хадис шәриф</p>
                                         <p class="kuntizbe float-right"><a href="/kuntizbe.kz">kuntizbe.kz</a></p>
@@ -228,11 +228,9 @@
                             </div>
                             <a class="carousel-control-prev" style="width:5%" href="#carouselExampleCaptions" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <!--<span class="sr-only">Previous</span>-->
                             </a>
                             <a class="carousel-control-next" style="width:5%" href="#carouselExampleCaptions" role="button" data-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <!--<span class="sr-only">Next</span>-->
                             </a>
                         </div>
                     </div>
@@ -244,15 +242,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <ul class="menu d-flex justify-content-center align-items-center">
-                        <label for="nav-toggle" class="nav-toggle"><li class="menu-item" id="menu-item">Мәзір</li></label>
-                        <li class="menu-item">Негізгі бет</li>
-                        <li class="menu-item">Терминдер</li>
-                        <li class="menu-item">Сұрақ-жауап</li>
-                        <li class="menu-item">Жүктеп алу</li>
-                        <li class="menu-item">Медиа</li>
-                        <li class="menu-item">Линктер</li>
-                        <li class="menu-item">Жазылу</li>
+                    <ul class="menu d-flex justify-content-between align-items-center">
+                        <li class="menu-item" id="menu-item"><i class="fas fa-bars burger-left"></i><span class="d-none d-lg-inline">Мәзір</span></li>
+                        <li class="menu-item d-none d-lg-block">Негізгі бет</li>
+                        <li class="menu-item d-none d-lg-block">Терминдер</li>
+                        <li class="menu-item d-none d-lg-block">Сұрақ-жауап</li>
+                        <li class="menu-item d-md-block d-lg-none"><i class="fas fa-bars burger-center"></i>Mәзір</li>
+                        <li class="menu-item d-none d-lg-block">Жүктеп алу</li>
+                        <li class="menu-item d-none d-lg-block">Медиа</li>
+                        <li class="menu-item d-none d-lg-block">Линктер</li>
+                        <li class="menu-item d-none d-lg-block">Жазылу</li>
                         <li class="menu-item"><i class="fa fa-search"></i></li>
                     </ul>
                 </div>
