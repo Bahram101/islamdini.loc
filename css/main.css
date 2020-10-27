@@ -14,6 +14,7 @@
 .menu label:hover{
     background: #B28721;
 }
+
 input{
     outline:none;
 }
@@ -101,7 +102,7 @@ body{
     background-image: url('../img/header_bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    min-height:232px;
+    height:232px;
     position: relative;
     width:100%;
 }
@@ -110,7 +111,7 @@ body{
     top:0;
     left:0;
     width: 100%;
-    min-height: 200px;
+    height: 232px;
     background: rgba(225,225,225,0.7);
 }
 .header-center .logo{
@@ -187,8 +188,11 @@ body{
     background: transparent;
     border-color: transparent;
 }
+.header-bottom .menu{
+    position: relative;
+}
 .header-bottom .menu-item{
-    padding: 9px 27px 9px 28px;
+    padding: 9px 26px 9px 28px;
     border-left:1px solid #5EA28B;
     text-transform: uppercase;
     font-weight:bold;
@@ -199,11 +203,73 @@ body{
 }
 .header-bottom li:first-child{
     border-left: none;
+    padding-left:15px;
 }
-.header-bottom .menu-item .burger-left, .header-bottom .menu-item .burger-center{
-    margin-right: 3px;
+.header-bottom li:last-child{
+    padding: 6px;
+}
+.header-bottom .menu-item .burger-left, .header-bottom .burger-center i{
+    margin-right: 5px;
 }
 
+
+
+/*Search input*/
+.search-form{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.search-box{
+    display: flex;
+    flex-direction: row-reverse;
+    /*background: white;*/
+    /*padding: 3px;*/
+    /*border-radius: 50px;*/
+    /*height: 35px;*/
+    /* width: 35px; */
+    /*position: absolute;*/
+    z-index: 1;
+    top: 6px;
+    right: 15px;
+}
+/*.search-input{
+    width:300px;
+    padding:0 10px;
+}*/
+
+.search-box .search-input{
+    border: none;
+    background: none;
+    width:0;
+    padding: 0;
+    height: 30px;
+    transition: .4s;
+    position: absolute;
+    z-index: -1;
+}
+
+.search-box .search-button{
+    border: none;
+    width: 30px;
+    height: 30px;
+    /*border-radius: 50%;*/
+    transition: 0.7s;
+    background: transparent;
+}
+.search-box .search-button:focus{
+    outline:none !important;
+}
+.search-box .search-button .fa-search{
+    color:white;
+    transition:0.4s;
+}
+.search-box .search-button .bi-search{
+    color:white;
+    transition:0.4s;
+}
+/*search-outline{
+    color:white;
+}*/
 
 
 /*MAIN*/
@@ -249,16 +315,15 @@ body{
     border-top:2px solid #016241;
 }
 ion-icon{
-    font-size: 28px;
-    /*margin-top:10px;*/
+    color: white;
 }
-.rotate-90 {
+.rotate-90{
     display: inline-block;
     transform: rotate(180deg);
 }
 .article-content{
     border-bottom:1px solid #e0e2e1;
-    padding: 10px 15px 15px 0;
+    padding:20px;
 }
 .article-content:last-child{
     /*border-bottom: 0;*/
@@ -273,7 +338,7 @@ ion-icon{
     font-size: 20px;
     font-weight: bold;
 }
-.article-content .description{
+.article-content .description, .article-content .text{
     color:#2D2C2A;
     font-size: 18px;
 }
@@ -301,6 +366,30 @@ ion-icon{
     cursor: pointer;
     transition: all 0.3s;
 }
+.article-content .your-question textarea{
+    width:100%;
+    border: 2px solid #B28721;
+    padding: 0 7px;
+}
+.article-content .your-question .col-md-3{
+    padding-left:0;
+}
+.article-content .your-question .col-md-3 input{
+    width: 100%;
+    margin-bottom: 17px;
+    border: 2px solid #B28721;
+    padding: 5px 7px;
+}
+
+.article-content .your-question .col-md-3 input[type="submit"]{
+    margin-bottom:0;
+    background: #B28721;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
 
 /*SIDEBAR*/
 .sidebar{
@@ -447,7 +536,7 @@ ion-icon{
         justify-content: flex-end;
     }
     .header-bottom .menu-item {
-        padding:9px 15px 9px 20px;
+        padding:9px 12px 9px 20px;
     }
     .article-content .type{
         font-size: 26px;
@@ -466,11 +555,7 @@ ion-icon{
     }
     .header-top .city-search-column{
         display: flex;
-        justify-content:center;
-    }
-    .header-top .access-column{
-        display:flex;
-        justify-content: flex-end;
+        justify-content:flex-end;
     }
     .header-bottom .menu-item{
         border-left:0;
@@ -491,7 +576,6 @@ ion-icon{
         bottom:10px;
     }
     .header-center .carousel-item .text{
-        /*margin-bottom:0 !important;*/
         line-height: 1.2;
     }
     .header-center .carousel-item .hadis,
@@ -499,5 +583,76 @@ ion-icon{
         font-size: 24px;
     }
 
+}
 
+@media(min-width:576px) and (max-width:767px){
+    .header-bottom .menu-item{
+        border-left:0;
+    }
+    .header-top .namaztimes-column ul{
+        border-top:1px solid #fff;
+    }
+    .header-bottom .menu-item {
+        padding: 9px 10px 9px 10px;
+    }
+    .header-center .carousel-item .text {
+        font-size:25px;
+        line-height:0.8;
+    }
+    .article-content .your-question .col-md-3{
+        padding-left:15px;
+    }
+    .article-content .your-question textarea{
+        margin-bottom: 10px;
+    }
+}
+@media(max-width:575px){
+    .header-bottom .menu-column{
+        padding:0;
+    }
+    .header-bottom .menu-item{
+        border-left:0;
+    }
+    .header-bottom .burger-center{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 50%;
+    }
+    .header-top .date-column{
+        padding-top:10px;
+    }
+    .header-top .namaztime .name-and-time {
+        padding: 5px 11px 5px 10px;
+    }
+    .header-top .namaztimes-column {
+        padding-left:0;
+        padding-right:0;
+    }
+    .header-top .namaztimes-column ul{
+        border-top:1px solid #fff;
+    }
+    .header-top .namaztime .name-and-time{
+        font-size:14px;
+    }
+    .header-top .date-column{
+        justify-content: center;
+    }
+    .header-top .city-search-column{
+        display: flex;
+        justify-content: center;
+    }
+    .header-center .carousel-item .text {
+        font-size:30px;
+        line-height:1;
+    }
+    .article-content .category, .article-content .detail{
+        font-size:13px;
+    }
+    .article-content .your-question .col-md-3{
+        padding-left:15px;
+    }
+    .article-content .your-question textarea{
+        margin-bottom: 10px;
+    }
 }
