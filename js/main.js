@@ -43,6 +43,9 @@ $(document).ready(function () {
         if(control == false){
             e.preventDefault();
             searchInput.css({"width":"99%", "padding":"0 10px", "background":"white"});
+            if(window.matchMedia('(max-width: 575px)').matches){
+                searchInput.css({"width":"93%", "padding":"0 10px", "background":"white"});
+            }
             searchButton.css({"background":"white"});
             searchIcon.css({"color":"#016241"});
         }
@@ -62,6 +65,56 @@ $(document).ready(function () {
 
 });
 
-window.addEventListener('scroll', function() {
-   console.log(window.scrollY);
+//HEADER BOTTOM
+var prevScrollpos = window.pageYOffset;
+window.addEventListener('scroll', function(e) {
+    /*const documentHeight = document.documentElement.scrollHeight; //contentLenght
+    const windowHeight = window.innerHeight; //screenYlength
+    const scrollable = documentHeight - windowHeight;
+    const scrollY = pageYOffset;
+    const pageY = window.pageYOffset;*/
+
+    var scrollY = pageYOffset;
+    var headerBottom = document.querySelector(".header-bottom");
+    var main = document.querySelector("#main");
+    var currentScrollPos = window.pageYOffset;
+
+    if(window.matchMedia('(min-width: 1200px)').matches){
+        menu(340, 270);
+    }
+    if(window.matchMedia('(min-width: 992px) and (max-width: 1199px)').matches){
+        menu(340, 295);
+    }
+    if(window.matchMedia('(min-width: 768px) and (max-width: 991px)').matches){
+        menu(360, 310);
+    }
+    if(window.matchMedia('(min-width: 576px) and (max-width: 767px)').matches){
+        menu(400, 340);
+    }
+    if(window.matchMedia('(max-width: 575px)').matches){
+        menu(405, 360);
+    }
+    function menu(a, b){
+        if(currentScrollPos >= a){
+            if (prevScrollpos < currentScrollPos) {
+                headerBottom.classList.add('fixed-menu-close');
+                main.classList.add('main-top');
+                headerBottom.classList.remove('fixed-menu-open');
+            } else {
+                headerBottom.classList.add('fixed-menu-open');
+                headerBottom.classList.remove('fixed-menu-close');
+            }
+            prevScrollpos = currentScrollPos;
+        }else if(currentScrollPos <= b){
+            headerBottom.classList.remove('fixed-menu-close');
+            headerBottom.classList.remove('fixed-menu-open');
+            main.classList.remove('main-top');
+            prevScrollpos = currentScrollPos;
+        }
+    }
 });
+
+
+
+
+

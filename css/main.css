@@ -39,6 +39,7 @@ body{
 .header-top, .header-bottom{
     background: #016241;
     color:white;
+    transition:0.4s;
 }
 .header-top .namaztime{
     border-left: 1px solid #5ea28b;
@@ -144,6 +145,7 @@ body{
     font-size: 26px;
     font-weight: bold;
     font-family: "ID UNIVERSITY";
+    margin-right:-15px;
 }
 .m-bot-0{
     margin-bottom:0;
@@ -213,6 +215,27 @@ body{
 }
 
 
+.fixed-menu-close{
+    position: fixed;
+    top: -42px;
+    width: 100%;
+    z-index: 10;
+    transition: top 0.3s;
+}
+.fixed-menu-close-to575{
+
+}
+.fixed-menu-open{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    transition: top 0.3s;
+    box-shadow: 0 10px 10px 0 rgba(128,128,128,0.55) !important;;
+}
+.main-top{
+    padding-top:42px;
+}
 
 /*Search input*/
 .search-form{
@@ -222,20 +245,11 @@ body{
 .search-box{
     display: flex;
     flex-direction: row-reverse;
-    /*background: white;*/
-    /*padding: 3px;*/
-    /*border-radius: 50px;*/
-    /*height: 35px;*/
-    /* width: 35px; */
-    /*position: absolute;*/
     z-index: 1;
     top: 6px;
     right: 15px;
 }
-/*.search-input{
-    width:300px;
-    padding:0 10px;
-}*/
+
 
 .search-box .search-input{
     border: none;
@@ -245,16 +259,16 @@ body{
     height: 30px;
     transition: .4s;
     position: absolute;
-    z-index: -1;
+    z-index: 1;
 }
 
 .search-box .search-button{
     border: none;
     width: 30px;
     height: 30px;
-    /*border-radius: 50%;*/
     transition: 0.7s;
     background: transparent;
+    z-index:2;
 }
 .search-box .search-button:focus{
     outline:none !important;
@@ -267,15 +281,13 @@ body{
     color:white;
     transition:0.4s;
 }
-/*search-outline{
-    color:white;
-}*/
 
 
 /*MAIN*/
 #main{
     background: url("../img/background.png") repeat;
     background-size: 150px;
+    /*transition:0.4s;*/
 }
 .content{
     background: #fff;
@@ -607,18 +619,6 @@ ion-icon{
     }
 }
 @media(max-width:575px){
-    .header-bottom .menu-column{
-        padding:0;
-    }
-    .header-bottom .menu-item{
-        border-left:0;
-    }
-    .header-bottom .burger-center{
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        top: 50%;
-    }
     .header-top .date-column{
         padding-top:10px;
     }
@@ -646,6 +646,22 @@ ion-icon{
         font-size:30px;
         line-height:1;
     }
+    .header-bottom .menu-column{
+        padding:0;
+    }
+    .header-bottom .menu{
+        padding:0 7px;
+    }
+    .header-bottom .menu-item{
+        border-left:0;
+    }
+    .header-bottom .burger-center{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 50%;
+    }
+
     .article-content .category, .article-content .detail{
         font-size:13px;
     }
